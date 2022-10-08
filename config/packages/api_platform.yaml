@@ -1,0 +1,8 @@
+api_platform:
+    title:  'Eco-Data'
+    description: "L'application qui regroupe toutes les données utiles à l'écologie"
+    version: 1.0.0
+    mapping:
+        paths:
+#            - '%kernel.project_dir%/src/ApiPlatform'
+            - '%kernel.project_dir%/src/Doctrine/Entity'

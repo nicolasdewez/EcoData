@@ -1,0 +1,7 @@
+framework:
+    http_client:
+        scoped_clients:
+            piezometry.fr.hubeau:
+                base_uri: 'https://hubeau.eaufrance.fr'
+                headers:
+                    Accept: 'application/json'

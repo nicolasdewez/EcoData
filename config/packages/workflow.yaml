@@ -1,2 +1,21 @@
 framework:
-    workflows: null
+    workflows:
+        synchro:
+            type: 'state_machine'
+            marking_store:
+                type: 'method'
+                property: 'state'
+            supports:
+                - App\Doctrine\Entity\Synchro
+            initial_marking: draft
+            places:
+                - draft
+                - started
+                - completed
+            transitions:
+                start:
+                    from: draft
+                    to: started
+                complete:
+                    from: started
+                    to: completed

@@ -2,19 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Entity;
+namespace App\Doctrine\Entity;
 
+use App\Doctrine\Repository\UserRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
-#[ORM\Entity]
+#[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: 'users')]
 #[ORM\Index(fields: ['username'], name: 'users_idx_username')]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
-    #[ORM\Column(type: Types::INTEGER)]
+    #[ORM\Column(type: Types::SMALLINT, options: ['unsigned' => true])]
     #[ORM\Id, ORM\GeneratedValue(strategy: 'AUTO')]
     private ?int $id = null;
 
