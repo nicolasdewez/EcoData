@@ -50,5 +50,7 @@ final class Version20220918192533 extends AbstractMigration
         $this->addSql('ALTER TABLE piezometry_measurements DROP CONSTRAINT FK_90AB130921BDB235');
         $this->addSql('DROP TABLE piezometry_measurements');
         $this->addSql('DROP TABLE piezometry_stations');
+
+        $this->addSql('DELETE FROM data_types WHERE code = \'PIEZO\'');
     }
 }

@@ -130,10 +130,11 @@ class Synchro
 
     public function isPiezometry(): bool
     {
-        if (null === $this->dataType) {
-            return false;
-        }
+        return null !== $this->dataType && $this->dataType->isPiezometry();
+    }
 
-        return $this->dataType->isPiezometry();
+    public function isEuropeanFire(): bool
+    {
+        return null !== $this->dataType && $this->dataType->isEuropeanFire();
     }
 }

@@ -5,3 +5,8 @@ framework:
                 base_uri: 'https://hubeau.eaufrance.fr'
                 headers:
                     Accept: 'application/json'
+
+            european_fire.effis:
+                base_uri: 'https://api2.wild-fire.eu'
+                headers:
+                    Accept: 'application/json'

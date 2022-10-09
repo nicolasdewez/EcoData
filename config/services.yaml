@@ -6,6 +6,7 @@ services:
         autoconfigure: true
         bind:
             $piezometryFrHubeau: '@piezometry.fr.hubeau'
+            $europeanFireEFFIS: '@european_fire.effis'
 
     _instanceof:
         App\Doctrine\Listener\EntityListenerInterface:

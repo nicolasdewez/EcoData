@@ -5,10 +5,12 @@ framework:
             failed: '%env(MESSENGER_TRANSPORT_DSN)%/failed'
 
             synchro_piezometry: '%env(MESSENGER_TRANSPORT_DSN)%/synchro_piezometry'
+            synchro_european_fire: '%env(MESSENGER_TRANSPORT_DSN)%/synchro_european_fire'
 
         routing:
             'App\Messenger\Message\StartSynchro': synchronously
             'App\Messenger\Message\SynchroPiezometry': synchro_piezometry
+            'App\Messenger\Message\SynchroEuropeanFire': synchro_european_fire
 
 # when@test:
 #    framework:

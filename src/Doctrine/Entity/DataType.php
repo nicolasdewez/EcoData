@@ -23,6 +23,7 @@ class DataType
     private const LAST_SYNCHRO_DATE = 'date';
 
     private const PIEZOMETRY = 'PIEZO';
+    private const EUROPEAN_FIRE = 'EU-FIRE';
 
     #[ORM\Column(type: Types::SMALLINT, options: ['unsigned' => true])]
     #[ORM\Id, ORM\GeneratedValue(strategy: 'AUTO')]
@@ -97,5 +98,10 @@ class DataType
     public function isPiezometry(): bool
     {
         return self::PIEZOMETRY === $this->code;
+    }
+
+    public function isEuropeanFire(): bool
+    {
+        return self::EUROPEAN_FIRE === $this->code;
     }
 }
